@@ -1,7 +1,9 @@
+import StudentRegistration from "./components/StudentRegistration/StudentRegistration";
+
 function App() {
   return (
     <>
-      <h1>Hello</h1>
+      <StudentRegistration />
     </>
   );
 }
