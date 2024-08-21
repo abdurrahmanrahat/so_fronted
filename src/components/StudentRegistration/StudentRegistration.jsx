@@ -7,6 +7,14 @@ const defaultValues = {
   lastName: "",
   dateOfBirth: "",
   gender: "",
+  email: "",
+  contactNumber: "",
+  address: "",
+  guardian: {
+    fatherName: "",
+    motherName: "",
+    guardianContactNumber: "",
+  },
 };
 
 const genderOptions = [
@@ -27,10 +35,10 @@ const StudentRegistration = () => {
         defaultValues={defaultValues}
       >
         <div>
-          <label className="font-medium text-[20px] mb-2 block">
+          <label className="font-medium text-[20px] mb-4 block">
             Student Details:
           </label>
-          <div className="md:flex gap-6">
+          <div className="grid grid-cols-3 gap-6">
             <SOInput
               name="firstName"
               placeholder="First Name"
@@ -50,6 +58,48 @@ const StudentRegistration = () => {
             <SOSelect
               options={genderOptions}
               name="gender"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent transition-all ease-in-out"
+            />
+
+            <SOInput
+              name="email"
+              type="email"
+              placeholder="Email Address"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent transition-all ease-in-out"
+            />
+            <SOInput
+              name="contactNumber"
+              type="number"
+              placeholder="Contact Number"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent transition-all ease-in-out"
+            />
+            <SOInput
+              name="address"
+              placeholder="Address"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent transition-all ease-in-out"
+            />
+          </div>
+        </div>
+
+        <div>
+          <label className="font-medium text-[20px] mt-8 mb-4 block">
+            Student Guardian Details:
+          </label>
+          <div className="grid md:grid-cols-3 gap-6">
+            <SOInput
+              name="guardian.fatherName"
+              placeholder="Father Name"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent transition-all ease-in-out"
+            />
+            <SOInput
+              name="guardian.motherName"
+              placeholder="Mother Name"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent transition-all ease-in-out"
+            />
+            <SOInput
+              name="guardian.guardianContactNumber"
+              type="number"
+              placeholder="Guardian Contact Number"
               className="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent transition-all ease-in-out"
             />
           </div>
