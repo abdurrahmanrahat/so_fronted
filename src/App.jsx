@@ -2,9 +2,9 @@ import StudentRegistration from "./components/StudentRegistration/StudentRegistr
 
 function App() {
   return (
-    <>
+    <div className="m-10">
       <StudentRegistration />
-    </>
+    </div>
   );
 }
 

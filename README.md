@@ -1,3 +1,3 @@
 # School_Online
 
-- Student registration form.
+- Student Registration Form.
