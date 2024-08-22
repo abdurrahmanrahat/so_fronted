@@ -2,7 +2,7 @@ export const studentRegistrationDefaultValues = {
     firstName: "",
     lastName: "",
     dateOfBirth: "",
-    gender: "",
+    gender: "male",
     email: "",
     contactNumber: "",
     address: "",
@@ -14,7 +14,7 @@ export const studentRegistrationDefaultValues = {
 };
 
 export const studentRegistrationGenderOptions = [
-    { label: "Male", value: "male" },
-    { label: "Female", value: "female" },
-    { label: "Others", value: "others" },
+    { label: "Male", value: "male", selected: true },
+    { label: "Female", value: "female", selected: false },
+    { label: "Others", value: "others", selected: false },
 ];
