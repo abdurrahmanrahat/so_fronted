@@ -1,27 +1,10 @@
+import {
+  studentRegistrationDefaultValues,
+  studentRegistrationGenderOptions,
+} from "../../utils/formUtils";
 import SOForm from "../Reuseable/Forms/SOForm";
 import SOInput from "../Reuseable/Forms/SOInput";
 import SOSelect from "../Reuseable/Forms/SOSelect";
-
-const defaultValues = {
-  firstName: "",
-  lastName: "",
-  dateOfBirth: "",
-  gender: "",
-  email: "",
-  contactNumber: "",
-  address: "",
-  guardian: {
-    fatherName: "",
-    motherName: "",
-    guardianContactNumber: "",
-  },
-};
-
-const genderOptions = [
-  { label: "Male", value: "male" },
-  { label: "Female", value: "female" },
-  { label: "Others", value: "others" },
-];
 
 const StudentRegistration = () => {
   const handleStudentRegistration = (values) => {
@@ -32,7 +15,7 @@ const StudentRegistration = () => {
     <div>
       <SOForm
         onSubmit={handleStudentRegistration}
-        defaultValues={defaultValues}
+        defaultValues={studentRegistrationDefaultValues}
       >
         <div>
           <label className="font-medium text-[20px] mb-4 block">
@@ -56,7 +39,7 @@ const StudentRegistration = () => {
             />
 
             <SOSelect
-              options={genderOptions}
+              options={studentRegistrationGenderOptions}
               name="gender"
               className="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent transition-all ease-in-out"
             />
