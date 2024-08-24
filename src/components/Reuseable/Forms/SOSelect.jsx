@@ -1,6 +1,6 @@
 import { Controller, useFormContext } from "react-hook-form";
 
-const SOSelect = ({ name, className, options, genderDefaultValue }) => {
+const SOSelect = ({ name, className, options }) => {
   const { control } = useFormContext();
   return (
     <Controller

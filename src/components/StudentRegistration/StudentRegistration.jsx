@@ -3,6 +3,7 @@ import { useRegisterStudentIntoDbMutation } from "../../redux/api/studentApi";
 import {
   studentRegistrationDefaultValues,
   studentRegistrationGenderOptions,
+  studentRegistrationMaritalStatusOptions,
 } from "../../utils/formUtils";
 import SOForm from "../Reuseable/Forms/SOForm";
 import SOInput from "../Reuseable/Forms/SOInput";
@@ -12,6 +13,7 @@ const StudentRegistration = () => {
   const [registerStudent] = useRegisterStudentIntoDbMutation();
 
   const handleStudentRegistration = async (values) => {
+    console.log(values);
     const toastId = toast.loading("Student registration in...");
 
     try {
@@ -43,15 +45,15 @@ const StudentRegistration = () => {
           <label className="font-medium text-[20px] mb-4 block">
             Student Details:
           </label>
-          <div className="grid grid-cols-3 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
             <SOInput name="firstName" placeholder="First Name" />
             <SOInput name="lastName" placeholder="Last Name" />
+            {/* <SOFileUpload name="imageUrl" /> */}
             <SOInput name="dateOfBirth" type="date" />
 
             <SOSelect
               options={studentRegistrationGenderOptions}
               name="gender"
-              genderDefaultValue="male"
             />
 
             <SOInput name="email" type="email" placeholder="Email Address" />
@@ -60,7 +62,6 @@ const StudentRegistration = () => {
               type="number"
               placeholder="Contact Number"
             />
-            <SOInput name="address" placeholder="Address" />
           </div>
         </div>
 
@@ -68,13 +69,60 @@ const StudentRegistration = () => {
           <label className="font-medium text-[20px] mt-8 mb-4 block">
             Student Guardian Details:
           </label>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
             <SOInput name="guardian.fatherName" placeholder="Father Name" />
             <SOInput name="guardian.motherName" placeholder="Mother Name" />
             <SOInput
               name="guardian.guardianContactNumber"
               type="number"
               placeholder="Guardian Contact Number"
+            />
+            <SOInput
+              name="guardian.yearlyIncome"
+              type="number"
+              placeholder="Parents Yearly Income"
+            />
+          </div>
+        </div>
+
+        <div>
+          <label className="font-medium text-[20px] mt-8 mb-4 block">
+            Present Address:
+          </label>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+            <SOInput name="presentAddress.division" placeholder="Division" />
+            <SOInput name="presentAddress.district" placeholder="District" />
+            <SOInput name="presentAddress.address" placeholder="Address" />
+          </div>
+        </div>
+
+        <div>
+          <label className="font-medium text-[20px] mt-8 mb-4 block">
+            Permanent Address:
+          </label>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+            <SOInput name="permanentAddress.division" placeholder="Division" />
+            <SOInput name="permanentAddress.district" placeholder="District" />
+            <SOInput name="permanentAddress.address" placeholder="Address" />
+          </div>
+        </div>
+
+        <div>
+          <label className="font-medium text-[20px] mt-8 mb-4 block">
+            Others:
+          </label>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+            <SOInput name="religion" placeholder="Religion" />
+            <SOInput name="nationality" placeholder="Nationality" />
+            <SOInput
+              name="identity"
+              type="number"
+              placeholder="NID / Birth Certificate"
+            />
+            <SOInput name="bloodGroup" placeholder="Blood Group" />
+            <SOSelect
+              options={studentRegistrationMaritalStatusOptions}
+              name="maritalStatus"
             />
           </div>
         </div>
